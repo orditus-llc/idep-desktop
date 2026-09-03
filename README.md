@@ -1,7 +1,7 @@
 # idep-desktop
 Installers for iDEP Desktop; Source is private.
 
-## Version 2.1.0 (Coming Soon)
+## Version 2.1.0
 - Supports Windows, Linux, & **Mac**
 - Database: data115
 - Runs Web Version: 2.5.0
