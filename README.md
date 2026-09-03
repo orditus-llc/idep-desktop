@@ -1,6 +1,10 @@
 # idep-desktop
 Installers for iDEP Desktop; Source is private.
 
+## Version 2.5.0
+- Match Web iDEP Version to Avoid Confusion
+- Ship pandoc in app to support rmarkdown generation
+
 ## Version 2.1.0
 - Supports Windows, Linux, & **Mac**
 - Database: data115
