@@ -1,5 +1,5 @@
 # idep-desktop
-Installers for iDEP Desktop; Source is private.
+Installers for iDEP Desktop
 
 ## Version 2.5.0
 - Match Web iDEP Version to Avoid Confusion
