@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Download iDEP Desktop for Windows, Mac, and Linux.">
+<link rel="icon" type="image/png" href="idep_logo.png">
+<title>iDEP Desktop Downloads</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+<style>
+/* Layout: single centered column; hero with OS-matched download, an expression-heatmap band, platform table, Linux steps, pipeline, release notes. */
+:root {
+  --bg: #F6F8FA;
+  --surface: #FFFFFF;
+  --fg: #16202B;
+  --muted: #5A6878;
+  --line: #DCE3EA;
+  --accent: #1F5FBF;
+  --accent-fg: #FFFFFF;
+  --accent-soft: #E6EEFA;
+  --up: #C2413A;
+  --down: #2B6CB0;
+  --mid: #EEF1F4;
+  --code-bg: #EEF2F6;
+  --warn-bg: #FFF6E5;
+  --warn-line: #E8C77A;
+  --font-display: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0E141B; --surface: #151D27; --fg: #E4EAF0; --muted: #93A2B3; --line: #26323F;
+    --accent: #5B9BF0; --accent-fg: #0B1220; --accent-soft: #17263A;
+    --up: #E0675F; --down: #5B9BF0; --mid: #1C2632; --code-bg: #1A2430;
+    --warn-bg: #2A2314; --warn-line: #7A6230;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0E141B; --surface: #151D27; --fg: #E4EAF0; --muted: #93A2B3; --line: #26323F;
+  --accent: #5B9BF0; --accent-fg: #0B1220; --accent-soft: #17263A;
+  --up: #E0675F; --down: #5B9BF0; --mid: #1C2632; --code-bg: #1A2430;
+  --warn-bg: #2A2314; --warn-line: #7A6230;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: var(--font-body); font-size: 16px; line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 920px; margin: 0 auto; }
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+code, .mono { font-family: var(--font-mono); font-size: 0.9em; }
+
+
+header.top {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  padding-block: 20px; border-bottom: 1px solid var(--line);
+}
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--fg); }
+.brand img { width: 36px; height: auto; }
+.brand span { font-family: var(--font-display); font-weight: 600; font-size: 19px; letter-spacing: -0.01em; }
+nav.links { display: flex; gap: 20px; flex-wrap: wrap; font-size: 14px; }
+nav.links a { color: var(--muted); text-decoration: none; }
+nav.links a:hover { color: var(--fg); }
+
+.hero { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; padding-block: 56px 36px; }
+.hero > div { min-width: 0; }
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+h1 {
+  font-family: var(--font-display); font-weight: 700; font-size: clamp(32px, 5vw, 48px);
+  line-height: 1.08; letter-spacing: -0.02em; margin: 10px 0 16px; text-wrap: balance;
+}
+.lede { color: var(--muted); font-size: 18px; max-width: 34em; margin: 0 0 28px; }
+.hero-logo { width: 150px; height: auto; }
+
+.cta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--accent); color: var(--accent-fg); text-decoration: none;
+  font-weight: 600; font-size: 17px; padding: 14px 22px; border-radius: 10px; border: 0;
+}
+.btn:hover { filter: brightness(1.08); }
+.btn svg { width: 18px; height: 18px; }
+.cta-meta { font-size: 14px; color: var(--muted); }
+.cta-meta strong { color: var(--fg); font-weight: 600; }
+.mac-note { margin-top: 12px; font-size: 14px; color: var(--muted); }
+
+.heat { display: grid; gap: 2px; margin-block: 8px 48px; }
+.heat div { aspect-ratio: 1; border-radius: 2px; }
+.heat-cap { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); margin-top: -40px; margin-bottom: 48px; }
+.legend { display: flex; align-items: center; gap: 8px; }
+.legend i { display: inline-block; width: 64px; height: 8px; border-radius: 4px; background: linear-gradient(90deg, var(--down), var(--mid), var(--up)); }
+
+section { padding-block: 8px 48px; }
+h2 { font-family: var(--font-display); font-weight: 600; font-size: 24px; letter-spacing: -0.01em; margin: 0 0 6px; text-wrap: balance; }
+.sub { color: var(--muted); margin: 0 0 20px; }
+
+.table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+table { width: 100%; border-collapse: collapse; font-size: 15px; }
+th, td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); font-weight: 600; }
+td.num { font-variant-numeric: tabular-nums; }
+tr.mine td { background: var(--accent-soft); }
+.you { font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); margin-left: 8px; }
+.plat { font-weight: 600; }
+.plat small { display: block; font-weight: 400; color: var(--muted); font-size: 13px; }
+.dl { font-weight: 600; text-decoration: none; }
+.dl:hover { text-decoration: underline; }
+
+.linux { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 24px; }
+.linux ol { margin: 0; padding-left: 20px; display: grid; gap: 14px; }
+.linux li { padding-left: 4px; }
+.callout { background: var(--warn-bg); border: 1px solid var(--warn-line); border-radius: 8px; padding: 10px 14px; margin-top: 8px; font-size: 15px; }
+.code {
+  position: relative; margin-top: 10px; background: var(--code-bg); border-radius: 8px;
+  padding: 14px 16px; padding-right: 84px; overflow-x: auto;
+}
+.code pre { margin: 0; font-family: var(--font-mono); font-size: 14px; line-height: 1.7; }
+.code pre .p { color: var(--muted); user-select: none; }
+.copy {
+  position: absolute; top: 10px; right: 10px; font: 500 13px var(--font-body);
+  background: var(--surface); color: var(--fg); border: 1px solid var(--line); border-radius: 6px;
+  padding: 5px 10px; cursor: pointer;
+}
+.copy:hover { border-color: var(--accent); }
+.hint { font-size: 14px; color: var(--muted); margin: 8px 0 0; }
+.uninstall { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--line); }
+.uninstall h3 { font-size: 15px; margin: 0; }
+
+.pipeline { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.pipeline li { display: flex; align-items: center; gap: 8px; }
+.pipeline span { background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; font-size: 14px; }
+.pipeline li:not(:last-child)::after { content: "\2192"; color: var(--muted); }
+
+.notes { display: grid; gap: 0; border-left: 2px solid var(--line); margin-left: 6px; }
+.note { position: relative; padding: 0 0 24px 24px; }
+.note::before {
+  content: ""; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px; border-radius: 50%;
+  background: var(--bg); border: 2px solid var(--line);
+}
+.note.latest::before { border-color: var(--accent); background: var(--accent); }
+.note h3 { font-family: var(--font-display); font-size: 18px; margin: 0; display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+.note time { font-family: var(--font-body); font-size: 13px; font-weight: 400; color: var(--muted); }
+.note ul { margin: 6px 0 0; padding-left: 18px; color: var(--fg); }
+.note .tag { font-family: var(--font-body); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); }
+
+footer { border-top: 1px solid var(--line); padding-block: 24px 40px; font-size: 14px; color: var(--muted); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+footer a { color: var(--muted); }
+
+@media (max-width: 640px) {
+  .hero { grid-template-columns: 1fr; padding-block: 36px 28px; }
+  .hero-logo { display: none; }
+  .btn { width: 100%; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#" aria-label="iDEP Desktop home">
+      <img src="idep_logo.png" alt="">
+      <span>iDEP Desktop</span>
+    </a>
+    <nav class="links">
+      <a href="http://bioinformatics.sdstate.edu/idep/">Web Version</a>
+      <a href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-018-2486-6">Paper</a>
+      <a href="https://github.com/orditus-llc/idep-desktop/releases">All releases</a>
+      <a href="https://github.com/orditus-llc/idep-desktop">GitHub</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div>
+      <div class="eyebrow">Integrated Differential Expression &amp; Pathway analysis</div>
+      <h1>Analyze gene expression on your own computer</h1>
+      <p class="lede">iDEP Desktop runs the full iDEP analysis on your machine for RNA-Seq, microarray, and proteomics data. R and every analysis package come bundled, so there is nothing else to set up.</p>
+      <div class="cta">
+        <a class="btn" id="primary" href="https://github.com/orditus-llc/idep-desktop/releases/download/desktop-v2.5.0/iDEP-2.5.0-win-x64.exe">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg>
+          <span id="primary-label">Download for Windows</span>
+        </a>
+        <div class="cta-meta"><strong id="primary-version">Version 2.5.0</strong> &middot; <span id="primary-time">20-30 min install</span></div>
+      </div>
+      <p class="mac-note" id="mac-note" hidden>Requires a Mac with Apple Silicon (M1 or newer). Intel Macs are not supported yet.</p>
+    </div>
+    <img class="hero-logo" src="idep_logo.png" alt="iDEP logo">
+  </div>
+
+  <div class="heat" id="heat" aria-hidden="true"></div>
+  <div class="heat-cap" aria-hidden="true">
+    <span>Samples &rarr;</span>
+    <span class="legend">down <i></i> up</span>
+  </div>
+
+  <section id="install">
+    <h2>All platforms</h2>
+    <p class="sub">Installers are hosted on GitHub Releases. Install time includes the first-launch setup.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Platform</th><th>Est. install time</th><th>Size</th><th>Download</th></tr>
+        </thead>
+        <tbody>
+          <tr data-os="win">
+            <td class="plat">Windows<small>Windows 10 or 11, 64-bit</small></td>
+            <td class="num">20-30 min</td>
+            <td class="num size">1.1 GB</td>
+            <td><a class="dl mono" href="https://github.com/orditus-llc/idep-desktop/releases/download/desktop-v2.5.0/iDEP-2.5.0-win-x64.exe">iDEP-2.5.0-win-x64.exe</a></td>
+          </tr>
+          <tr data-os="mac">
+            <td class="plat">Mac<small>Apple Silicon (M1 or newer)</small></td>
+            <td class="num">10-15 min</td>
+            <td class="num size">1.2 GB</td>
+            <td><a class="dl mono" href="https://github.com/orditus-llc/idep-desktop/releases/download/desktop-v2.5.0/iDEP-2.5.0-mac-arm64.dmg">iDEP-2.5.0-mac-arm64.dmg</a></td>
+          </tr>
+          <tr data-os="linux">
+            <td class="plat">Linux<small>Ubuntu 24.04, x86_64. <a href="#linux">Steps below</a></small></td>
+            <td class="num">10-15 min</td>
+            <td class="num size">1.1 GB</td>
+            <td><a class="dl mono" href="https://github.com/orditus-llc/idep-desktop/releases/download/desktop-v2.5.0/idep-2.5.0-linux-amd64.deb">idep-2.5.0-linux-amd64.deb</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="linux">
+    <h2>Installing on Linux</h2>
+    <p class="sub">Tested on Ubuntu 24.04, x86_64.</p>
+    <div class="linux">
+      <ol>
+        <li>
+          <strong>New install:</strong> double-click the <code>.deb</code> file, or run the command below.
+          <div class="callout"><strong>Upgrading from an older version:</strong> you must use the terminal. Ubuntu's App Center can't upgrade a downloaded <code>.deb</code> and will show "Installed" greyed out.</div>
+          <div class="code">
+            <pre id="cmd-install"><span class="p">$ </span>cd ~/Downloads
+<span class="p">$ </span>sudo apt install ./<span id="deb-name">idep-2.5.0-linux-amd64.deb</span></pre>
+            <button class="copy" type="button" id="copy-install" data-target="cmd-install">Copy</button>
+          </div>
+          <p class="hint">The <code>cd ~/Downloads</code> line assumes the file is in your Downloads folder.</p>
+        </li>
+        <li>Launch iDEP from your application menu.</li>
+      </ol>
+      <div class="uninstall">
+        <h3>To uninstall</h3>
+        <div class="code">
+          <pre id="cmd-uninstall"><span class="p">$ </span>sudo dpkg -r idepgolem
+<span class="p">$ </span>sudo dpkg --purge idepgolem</pre>
+          <button class="copy" type="button" id="copy-uninstall" data-target="cmd-uninstall">Copy</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Release Notes</h2>
+    <p class="sub">Older installers are on the <a href="https://github.com/orditus-llc/idep-desktop/releases">releases page</a>.</p>
+    <div class="notes" id="notes">
+      <div class="note latest" data-version="2.5.0">
+        <h3>2.5.0 <span class="tag">Latest</span> <time datetime="2026-09-03">Sep 3, 2026</time></h3>
+        <ul>
+          <li>Desktop version number now matches the web version</li>
+          <li>Downloadable reports work out of the box (pandoc is bundled)</li>
+        </ul>
+      </div>
+      <div class="note">
+        <h3>2.1.0 <time datetime="2026-09-01">Sep 1, 2026</time></h3>
+        <ul>
+          <li>Adds Mac support alongside Windows and Linux</li>
+          <li>Database: data115</li>
+          <li>Runs Web Version 2.5.0</li>
+        </ul>
+      </div>
+      <div class="note">
+        <h3>2.0.0 <time datetime="2026-07-21">Jul 21, 2026</time></h3>
+        <ul>
+          <li>Windows and Linux</li>
+          <li>Database: data113</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function () {
+  // Expression heatmap band: deterministic values so every visit looks the same.
+  var heat = document.getElementById('heat');
+  var cols = window.innerWidth < 640 ? 24 : 48, rows = 6;
+  heat.style.gridTemplateColumns = 'repeat(' + cols + ', 1fr)';
+  var seed = 7;
+  function rnd() { seed = (seed * 16807) % 2147483647; return seed / 2147483647; }
+  var frag = document.createDocumentFragment();
+  for (var r = 0; r < rows; r++) {
+    var geneBias = (rnd() - 0.5) * 1.2;
+    for (var c = 0; c < cols; c++) {
+      var group = c < cols / 2 ? -1 : 1;
+      var v = Math.max(-1, Math.min(1, geneBias * group + (rnd() - 0.5) * 0.9));
+      var cell = document.createElement('div');
+      var pct = Math.round(Math.abs(v) * 100);
+      cell.style.background = 'color-mix(in srgb, ' + (v > 0 ? 'var(--up)' : 'var(--down)') + ' ' + pct + '%, var(--mid))';
+      frag.appendChild(cell);
+    }
+  }
+  heat.appendChild(frag);
+
+  // OS detection for the primary button. The HTML ships with 2.5.0 links as a
+  // fallback; refreshFromGitHub() swaps in the newest desktop-v* release.
+  var labels = {
+    win:   { label: 'Download for Windows', time: '20-30 min install' },
+    mac:   { label: 'Download for Mac',     time: '10-15 min install' },
+    linux: { label: 'Download for Linux',   time: '10-15 min install' }
+  };
+  var p = ((navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || navigator.userAgent || '').toLowerCase();
+  var os = /mac/.test(p) ? 'mac' : /linux|x11/.test(p) && !/android/.test(p) ? 'linux' : 'win';
+  var row = document.querySelector('tr[data-os="' + os + '"]');
+
+  function syncPrimary() {
+    document.getElementById('primary').href = row.querySelector('.dl').href;
+    document.getElementById('primary-label').textContent = labels[os].label;
+    document.getElementById('primary-time').textContent = labels[os].time;
+  }
+  document.getElementById('mac-note').hidden = os !== 'mac';
+  row.classList.add('mine');
+  var you = document.createElement('span');
+  you.className = 'you'; you.textContent = 'Your system';
+  row.querySelector('.plat').firstChild.after(you);
+  syncPrimary();
+
+  // Live release lookup. Only desktop-v* tags count: R package releases
+  // (v* tags) are published to the same repo and must be ignored.
+  var patterns = { win: /-win-x64\.exe$/, mac: /-mac-arm64\.dmg$/, linux: /-linux-amd64\.deb$/ };
+  function gb(bytes) { return (bytes / 1e9).toFixed(1) + ' GB'; }
+  function fmtDate(iso) {
+    return new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+  }
+  function addNote(rel, version) {
+    var notes = document.getElementById('notes');
+    if (notes.querySelector('[data-version="' + version + '"]')) return;
+    var note = document.createElement('div');
+    note.className = 'note';
+    note.dataset.version = version;
+    var h3 = document.createElement('h3');
+    h3.textContent = version + ' ';
+    var time = document.createElement('time');
+    time.dateTime = rel.published_at;
+    time.textContent = fmtDate(rel.published_at);
+    h3.appendChild(time);
+    note.appendChild(h3);
+    var bullets = String(rel.body || '').split(/\r?\n/)
+      .map(function (l) { return l.trim(); })
+      .filter(function (l) { return /^[-*] /.test(l); })
+      .map(function (l) { return l.slice(2); });
+    if (bullets.length) {
+      var ul = document.createElement('ul');
+      bullets.forEach(function (t) { var li = document.createElement('li'); li.textContent = t; ul.appendChild(li); });
+      note.appendChild(ul);
+    }
+    notes.insertBefore(note, notes.firstChild);
+  }
+  function markLatest(version) {
+    document.querySelectorAll('#notes .note').forEach(function (n) {
+      var isLatest = n.dataset.version === version;
+      n.classList.toggle('latest', isLatest);
+      var tag = n.querySelector('.tag');
+      if (tag && !isLatest) tag.remove();
+      if (!tag && isLatest) {
+        tag = document.createElement('span');
+        tag.className = 'tag'; tag.textContent = 'Latest';
+        n.querySelector('h3').insertBefore(tag, n.querySelector('time'));
+        n.querySelector('h3').insertBefore(document.createTextNode(' '), n.querySelector('time'));
+      }
+    });
+  }
+  function refreshFromGitHub() {
+    if (!window.fetch) return;
+    fetch('https://api.github.com/repos/orditus-llc/idep-desktop/releases?per_page=30', {
+      headers: { 'Accept': 'application/vnd.github+json' }
+    }).then(function (res) {
+      if (!res.ok) throw new Error('GitHub API ' + res.status);
+      return res.json();
+    }).then(function (releases) {
+      var desktop = releases.filter(function (r) {
+        return !r.draft && !r.prerelease && /^desktop-v/.test(r.tag_name);
+      });
+      if (!desktop.length) return;
+      var rel = desktop[0];
+      var version = rel.tag_name.replace(/^desktop-v/, '');
+      Object.keys(patterns).forEach(function (key) {
+        var asset = (rel.assets || []).filter(function (a) { return patterns[key].test(a.name); })[0];
+        if (!asset) return;
+        var tr = document.querySelector('tr[data-os="' + key + '"]');
+        var link = tr.querySelector('.dl');
+        link.href = asset.browser_download_url;
+        link.textContent = asset.name;
+        tr.querySelector('.size').textContent = gb(asset.size);
+        if (key === 'linux') document.getElementById('deb-name').textContent = asset.name;
+      });
+      document.getElementById('primary-version').textContent = 'Version ' + version;
+      syncPrimary();
+      addNote(rel, version);
+      markLatest(version);
+    }).catch(function () {
+      // Rate limit or network error: the built-in links stay in place.
+    });
+  }
+  refreshFromGitHub();
+
+  // Copy buttons (strip the "$ " prompts).
+  document.querySelectorAll('.copy').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var pre = document.getElementById(btn.dataset.target);
+      var text = Array.prototype.map.call(pre.childNodes, function (n) {
+        return n.nodeType === 1 && n.classList.contains('p') ? '' : n.textContent;
+      }).join('');
+      function done(msg) { btn.textContent = msg; setTimeout(function () { btn.textContent = 'Copy'; }, 1600); }
+      function fallback() {
+        var range = document.createRange(); range.selectNodeContents(pre);
+        var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(range);
+        done('Press Ctrl+C');
+      }
+      try {
+        navigator.clipboard.writeText(text).then(function () { done('Copied'); }, fallback);
+      } catch (e) { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
