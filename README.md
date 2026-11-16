@@ -10,7 +10,7 @@
 **Integrated Differential Expression & Pathway analysis, as a desktop app.**<br>
 Analyze RNA-Seq, microarray, and proteomics data on your own computer. No R setup required.
 
-**[Download page](https://orditus-llc.github.io/idep-desktop/)**
+**[Download Page](https://orditus-llc.github.io/idep-desktop/)**
 
 </div>
 
