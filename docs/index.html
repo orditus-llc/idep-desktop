@@ -8,7 +8,7 @@
 <title>iDEP Desktop Downloads</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
 <style>
 /* Layout: single centered column; hero with OS-matched download, an expression-heatmap band, platform table, Windows and Linux steps, pipeline, release notes. */
 :root {
@@ -65,7 +65,7 @@ header.top {
 }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--fg); }
 .brand img { width: 36px; height: auto; }
-.brand span { font-family: var(--font-display); font-weight: 600; font-size: 19px; letter-spacing: -0.01em; }
+.brand span { font-family: "Barlow", var(--font-body); font-weight: 600; font-size: 20px; }
 nav.links { display: flex; gap: 20px; flex-wrap: wrap; font-size: 14px; }
 nav.links a { color: var(--muted); text-decoration: none; }
 nav.links a:hover { color: var(--fg); }
@@ -168,15 +168,15 @@ footer a { color: var(--muted); }
 
 <div class="wrap">
   <header class="top">
-    <a class="brand" href="#" aria-label="iDEP Desktop home">
-      <img src="idep_logo.png" alt="">
-      <span>iDEP Desktop</span>
+    <a class="brand" href="https://www.orditus.com" target="_top" aria-label="Orditus home">
+      <img src="orditus_logo.png" alt="">
+      <span>Orditus</span>
     </a>
     <nav class="links">
-      <a href="http://bioinformatics.sdstate.edu/idep/">Web Version</a>
-      <a href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-018-2486-6">Paper</a>
-      <a href="https://github.com/orditus-llc/idep-desktop/releases">All releases</a>
-      <a href="https://github.com/orditus-llc/idep-desktop">GitHub</a>
+      <a href="https://bioinformatics.sdstate.edu/idep/" target="_blank" rel="noopener">Web Version</a>
+      <a href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-018-2486-6" target="_blank" rel="noopener">Paper</a>
+      <a href="https://github.com/orditus-llc/idep-desktop/releases" target="_blank" rel="noopener">All releases</a>
+      <a href="https://github.com/orditus-llc/idep-desktop" target="_blank" rel="noopener">GitHub</a>
     </nav>
   </header>
 
@@ -281,7 +281,7 @@ footer a { color: var(--muted); }
 
   <section>
     <h2>Release Notes</h2>
-    <p class="sub">Older installers are on the <a href="https://github.com/orditus-llc/idep-desktop/releases">releases page</a>.</p>
+    <p class="sub">Older installers are on the <a href="https://github.com/orditus-llc/idep-desktop/releases" target="_blank" rel="noopener">releases page</a>.</p>
     <div class="notes" id="notes">
       <div class="note latest" data-version="2.5.0">
         <h3>2.5.0 <span class="tag">Latest</span> <time datetime="2026-09-03">Sep 3, 2026</time></h3>
