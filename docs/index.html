@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
 <style>
-/* Layout: single centered column; hero with OS-matched download, an expression-heatmap band, platform table, Linux steps, pipeline, release notes. */
+/* Layout: single centered column; hero with OS-matched download, an expression-heatmap band, platform table, Windows and Linux steps, pipeline, release notes. */
 :root {
   --bg: #F6F8FA;
   --surface: #FFFFFF;
@@ -118,6 +118,8 @@ tr.mine td { background: var(--accent-soft); }
 .linux { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 24px; }
 .linux ol { margin: 0; padding-left: 20px; display: grid; gap: 14px; }
 .linux li { padding-left: 4px; }
+.shots { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px; }
+.shots img { width: 300px; max-width: 100%; height: auto; border-radius: 8px; }
 .callout { background: var(--warn-bg); border: 1px solid var(--warn-line); border-radius: 8px; padding: 10px 14px; margin-top: 8px; font-size: 15px; }
 .code {
   position: relative; margin-top: 10px; background: var(--code-bg); border-radius: 8px;
@@ -211,7 +213,7 @@ footer a { color: var(--muted); }
         </thead>
         <tbody>
           <tr data-os="win">
-            <td class="plat">Windows<small>Windows 10 or 11, 64-bit</small></td>
+            <td class="plat">Windows<small>Windows 10 or 11, 64-bit. <a href="#windows">Steps below</a></small></td>
             <td class="num">20-30 min</td>
             <td class="num size">1.1 GB</td>
             <td><a class="dl mono" href="https://github.com/orditus-llc/idep-desktop/releases/download/desktop-v2.5.0/iDEP-2.5.0-win-x64.exe">iDEP-2.5.0-win-x64.exe</a></td>
@@ -230,6 +232,22 @@ footer a { color: var(--muted); }
           </tr>
         </tbody>
       </table>
+    </div>
+  </section>
+
+  <section id="windows">
+    <h2>Installing on Windows</h2>
+    <div class="linux">
+      <ol>
+        <li>
+          Double-click the <code>.exe</code>. If you see "Windows protected your PC", click <strong>More info</strong>, then <strong>Run anyway</strong>.
+          <div class="shots">
+            <img src="windows-protect.png" alt="Click More info" width="300">
+            <img src="run-anyway.png" alt="Click Run anyway" width="300">
+          </div>
+        </li>
+        <li>Please be patient. Installing and first launch are slow, but working.</li>
+      </ol>
     </div>
   </section>
 
