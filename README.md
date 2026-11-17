@@ -22,10 +22,17 @@ Download the file for your platform from the latest [release](https://github.com
 |---|---|---|
 | Windows | 20-30 min | `iDEP-x.y.z-win-x64.exe` |
 | Mac (Apple Silicon) | 10-15 min | `iDEP-x.y.z-mac-arm64.dmg` |
-| Linux\* | 10-15 min | `idep-x.y.z-linux-amd64.deb` |
+| Linux | 10-15 min | `idep-x.y.z-linux-amd64.deb` |
 
-### \*Linux (tested on Ubuntu 24.04, x86_64)
+### Windows
 
+1. Double-click the `.exe`. If you see "Windows protected your PC", click **More info**, then **Run anyway**.<br>
+   <img src="docs/windows-protect.png" alt="Click More info" width="300"> <img src="docs/run-anyway.png" alt="Click Run anyway" width="300">
+2. Be patient. Installing and first launch are slow, but working.
+
+### Linux
+
+**Tested on Ubuntu 24.04, x86_64**
 1. **New install:** double-click the `.deb` file, or run the command below.<br>
    **Upgrading from an older version:** you must use the terminal. Ubuntu's App Center can't upgrade a downloaded `.deb` and will show "Installed" greyed out.
    ```console
